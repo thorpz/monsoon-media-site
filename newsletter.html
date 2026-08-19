@@ -239,13 +239,14 @@
   .nl-reversed .wave-bg { background-color: var(--paper) !important; opacity: 0.08 !important; }
   .nl-reversed .num { color: rgba(255,255,255,0.82) !important; }
   .nl-reversed h2, .nl-reversed .fund-item h3, .nl-reversed h3 { color: var(--paper) !important; }
-  .nl-reversed .fund-item p, .nl-reversed > p { color: rgba(255,255,255,0.88) !important; }
+  .nl-reversed .fund-item p, .nl-reversed p { color: rgba(255,255,255,0.88) !important; }
   .nl-reversed.is-dark { background: var(--ink); }
 
   /* Photo tile paired side-by-side with text */
-  .photo-pair { display: grid; grid-template-columns: 1fr 1.15fr; gap: 32px; align-items: center; margin: 28px 0 8px; }
-  .photo-pair .photo-tile img { width: 100%; border-radius: 16px; filter: grayscale(1) contrast(1.1) brightness(1.02); display: block; }
+  .photo-pair { display: grid; grid-template-columns: 1fr 1.15fr; gap: 32px; align-items: start; margin: 28px 0 8px; }
+  .photo-pair .photo-tile img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 16px; filter: grayscale(1) contrast(1.1) brightness(1.02); display: block; }
   .photo-pair .photo-tile-caption { font-size: 12px; color: var(--ink-soft); margin: 10px 0 0; }
+  .photo-pair p { max-width: none; }
   .nl-reversed .photo-tile-caption { color: rgba(255,255,255,0.65); }
   @media (max-width: 760px) {
     .photo-pair { grid-template-columns: 1fr; }
@@ -258,6 +259,7 @@
   .people-grid figcaption { font-size: 12.5px; font-weight: 700; color: rgba(255,255,255,0.85); margin-top: 8px; text-align: center; }
 
   .studio-row { display: grid; grid-template-columns: 1.6fr 1fr; gap: 32px; align-items: center; }
+  .studio-row p { max-width: none; }
   @media (max-width: 760px) {
     .studio-row { grid-template-columns: 1fr; }
     .studio-row .people-grid { max-width: 260px; }
