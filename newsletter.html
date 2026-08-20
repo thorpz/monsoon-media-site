@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <title>The Current | Monsoon Media</title>
 <style>
@@ -291,8 +292,15 @@
   .nl-subscribe {
     grid-column: span 3; background: var(--panel); padding: calc(var(--unit) * 4) calc(var(--unit) * 3);
     margin-top: calc(var(--unit) * 5); text-align: center;
+    position: relative; overflow: hidden;
   }
-  .nl-subscribe .wave-mark { width: 30px; margin: 0 auto 14px; background-color: var(--blue); }
+  .nl-subscribe > * { position: relative; }
+  .nl-subscribe .wave-mark:not(.nl-watermark) { width: 30px; margin: 0 auto 14px; background-color: var(--blue); }
+
+  /* decorative watermark: the brand wave, huge and faint, bled into a page corner */
+  .nl-watermark { position: absolute; pointer-events: none; }
+  .nl-cover .nl-watermark { width: 260px; top: 6mm; right: 4mm; background-color: var(--ink); opacity: 0.045; }
+  .nl-subscribe .nl-watermark { width: 210px; bottom: -18px; right: -10px; background-color: var(--blue); opacity: 0.1; }
   .nl-subscribe h3 { font-family: 'Archivo', sans-serif; font-size: 20px; font-weight: 800; margin: 0 0 8px; }
   .nl-subscribe p { font-size: 13.5px; color: var(--ink-soft); margin: 0 auto 20px; max-width: 46ch; line-height: 1.6; }
   .subscribe-row { display: flex; gap: 10px; max-width: 400px; margin: 0 auto; }
@@ -331,6 +339,7 @@
 
 <div class="nl-doc">
 <section class="nl-page nl-cover">
+  <div class="wave-mark nl-watermark" aria-hidden="true"></div>
 
   <div class="nl-cols masthead-band">
     <div class="span-3">
@@ -341,7 +350,7 @@
 
   <div class="nl-cols info-strip">
     <div class="span-3">
-      Issue 02, 19 August 2026 &middot; <a href="the-current-archive.html">Past editions</a>
+      Issue 02, 19 August 2026 &middot; 4 minute read &middot; <a href="the-current-archive.html">Past editions</a>
     </div>
   </div>
 
@@ -534,6 +543,7 @@
   </article>
 
   <div class="nl-subscribe">
+    <div class="wave-mark nl-watermark" aria-hidden="true"></div>
     <div class="wave-mark"></div>
     <h3>Get this in your inbox</h3>
     <p>Subscribing isn't live yet. We're building the site first, then wiring this up. Check back soon.</p>
@@ -567,7 +577,7 @@
           <h4>Get In Touch</h4>
           <ul>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="mailto:hello@monsoonmedia.com.au">hello@monsoonmedia.com.au</a></li>
+            <li><a href="mailto:monsoon.media.zaine@gmail.com">monsoon.media.zaine@gmail.com</a></li>
           </ul>
         </div>
       </div>
