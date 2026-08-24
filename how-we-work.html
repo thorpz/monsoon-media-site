@@ -164,9 +164,24 @@
 
   @media (max-width: 900px) {
     .hw-hero-fullbleed { width: auto; margin-left: 0; padding: 0 0 40px; min-height: 0; }
-    .hw-hero-photo { position: relative; top: 0; height: 320px; left: auto; right: auto; margin: 0 0 28px; }
-    .hw-hero-photo img { border-radius: 14px; -webkit-mask-image: none; mask-image: none; }
-    .hw-hero-inner { padding: 0 40px; }
+    /* Mirrors this page's desktop layout: the photo sits on the left there,
+       so on mobile it runs off the left edge instead of the right. */
+    .hw-hero-photo {
+      position: relative; top: 0; left: auto; right: auto;
+      /* explicit width so max-height caps the height only, never the width */
+      width: calc(100% + 40px); height: auto; aspect-ratio: 9 / 10;
+      /* portrait on a phone, but capped so it can't swallow a tablet screen */
+      max-height: 460px;
+      margin: 0 0 30px -40px;
+    }
+    .hw-hero-photo img {
+      height: 100%;
+      border-radius: 0 16px 16px 0;
+      object-position: 62% 50%;
+      -webkit-mask-image: none; mask-image: none;
+    }
+    /* already inside the page-level .wrap on mobile, so no second gutter */
+    .hw-hero-inner { padding: 0; }
     .page-hero { max-width: 100%; margin: 0; }
   }
 
