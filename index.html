@@ -196,28 +196,28 @@
 
   @media (max-width: 900px) {
     .hero-fullbleed { width: auto; margin-left: 0; padding: 0 0 40px; min-height: 0; }
-    /* Runs off the right edge of the screen, echoing the desktop layout where
-       the photo sits on the right and bleeds off-canvas. Taller crop than a
-       letterbox band so the portrait source actually gets room to read. */
+    /* Runs off the left edge of the screen, mirroring the how-we-work hero.
+       Taller crop than a letterbox band so the portrait source actually
+       gets room to read. */
     .hero-photo-full {
       position: relative; top: 0; left: auto;
       /* explicit width so max-height caps the height only, never the width */
       width: calc(100% + 40px); height: auto; aspect-ratio: 9 / 10;
       /* portrait on a phone, but capped so it can't swallow a tablet screen */
       max-height: 460px;
-      margin: 0 -40px 30px 0;
+      margin: 0 0 30px -40px;
     }
     .hero-photo-full img {
       height: 100%;
-      border-radius: 16px 0 0 16px;
+      border-radius: 0 16px 16px 0;
       object-position: 58% 52%;
       -webkit-mask-image: none; mask-image: none;
     }
     /* already inside the page-level .wrap on mobile, so no second gutter */
     .hero-inner { padding: 0; }
     .hero-text-col { max-width: 100%; }
-    /* straddles the photo's left edge, same trick as desktop */
-    .badge { left: -20px; bottom: 22px; width: 92px; height: 92px; }
+    /* straddles the photo's right edge, now that the photo bleeds left */
+    .badge { left: auto; right: -20px; bottom: 22px; width: 92px; height: 92px; }
     .badge svg#badgeText { width: 78px; height: 78px; }
     .philosophy-row { grid-template-columns: 1fr; gap: 20px; text-align: left; }
     .phil-div { display: none; }
